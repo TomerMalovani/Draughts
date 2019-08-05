@@ -53,8 +53,19 @@ body{
     top: 39%;
 }
 
-.pawn{
+.bluePawn{
     background-color: blue;
+    border: solid red 1px;
+    display: inline-block;
+    height: 60%;
+    width: 50%;
+    border-radius: 50px;
+    margin-top:12%;
+}
+
+.greenPawn{
+    background-color: green;
+    border: solid red 1px;
     display: inline-block;
     height: 60%;
     width: 50%;

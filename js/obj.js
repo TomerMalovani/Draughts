@@ -6,7 +6,7 @@ class Tile {
         this.y = y
         this.ref = ref
     }
-    colorOnBoard(color, ref) {
+    colorOnBoard(color) {
         if (color == "whiteTile") {
             return "blackTile";
         }
@@ -42,7 +42,6 @@ class Board {
                 gameBoard[i][j] = new Tile(false, tileColor, i, j, tile);
                 tile.classList.add(tileColor, "tile");
                 tileColor = gameBoard[i][j].colorOnBoard(tileColor);
-
                 board.appendChild(tile);
             }
             if (i % 2 == 0) {
@@ -60,9 +59,20 @@ class Board {
             for (let j = 0; j < gameBoard[i].length; j++) {
                 if (gameBoard[i][j].color == "blackTile") {
                     let pawn = document.createElement("span");
-                    pawn.classList.add("pawn");
+                    pawn.classList.add("bluePawn");
                     gameBoard[i][j].ref.appendChild(pawn);
-                    let Pawn = new Pawn("blue", pawn);
+                    let pawnObj = new Pawn("blue", pawn);
+                }
+            }
+        }
+
+        for (let i = 7; i > 4; i--) {
+            for (let j = 0; j < gameBoard[i].length; j++) {
+                if (gameBoard[i][j].color == "blackTile") {
+                    let pawn = document.createElement("span");
+                    pawn.classList.add("greenPawn");
+                    gameBoard[i][j].ref.appendChild(pawn);
+                    let pawnObj = new Pawn("green", pawn);
                 }
             }
         }
